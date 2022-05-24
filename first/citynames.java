@@ -10,7 +10,7 @@ public class citynames extends JFrame implements ActionListener
             JButton b1,b2,b3;
             JTextArea t;
             JPanel p1,p2;
-
+	    JLabel l1,l2,l3;
             Hashtable ts;
             citynames()
             {
@@ -22,7 +22,11 @@ public class citynames extends JFrame implements ActionListener
                         b1=new JButton("Add");
                         b2=new JButton("Search");
                         b3=new JButton("Remove");
-
+			
+			l1=new JLabel("Enter City Name");
+			l2=new JLabel("Enter City Code");
+			l3=new JLabel("Enter City Name to Search");
+                        
                         t=new JTextArea(20,20);
                         p1=new JPanel();
                         p1.add(t);
