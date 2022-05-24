@@ -33,9 +33,14 @@ public class citynames extends JFrame implements ActionListener
 
                         p2= new JPanel();
                         p2.setLayout(new GridLayout(2,3));
+                        p2.add(l1);
                         p2.add(t1);
+                        p2.add(l2);
                         p2.add(t2);
+                                            
+
                         p2.add(b1);
+                        p2.add(l3);
                         p2.add(t3);
                         p2.add(b2);
                         p2.add(b3);

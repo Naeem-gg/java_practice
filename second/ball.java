@@ -4,6 +4,14 @@ import java.awt.geom.*;
 import java.util.*;
 import javax.swing.*;
 
+public class ball {
+    @SuppressWarnings("deprecation")
+    public static void main(String[] args) {
+        JFrame frame = new BounceFrame();
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.show();
+    }
+}
 class BounceFrame extends JFrame {
     public BounceFrame() {
         setSize(WIDTH, HEIGHT);
@@ -50,7 +58,7 @@ class BounceFrame extends JFrame {
 
 class BallCanvas extends JPanel
 {
-public void add(Ball b);
+public void add(Ball b){
 balls.add(b);
 }
 
@@ -111,10 +119,3 @@ canvas.paint(canvas.getGraphics());
     private int dy = 2;
 }
 
-public class ball {
-    public static void main(String[] args) {
-        JFrame frame = new BounceFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.show();
-    }
-}
