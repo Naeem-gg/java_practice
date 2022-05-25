@@ -1,15 +1,13 @@
-public class producer {
-    // section
+class producer {
     public static void main(String args[]) {
         SyncProcess p = new SyncProcess();
-        // an instance of processes parallel is created
+        // an instance of parallel is created
         new Producer(p);
         // Run the thread for producer
         new Consumer(p);
         // Run consumer thread
     }
 }
-
 class SyncProcess {
     int n;
     boolean flag = false;
@@ -38,46 +36,45 @@ class SyncProcess {
                 wait();
             } catch (InterruptedException e) {
             }
-            System.out.println("Consumer :" + n);
-            flag = false;
-            // Exit from the
-            notify();
-            return (n
-            // critical
-            );
         }
+        System.out.println("Consumer :" + n);
+        flag = false;
+        // Exit from the
+        notify();
+        return (n);
+        // critical
+    }
+}
+
+class Producer implements Runnable {
+    SyncProcess p;
+
+    Producer(SyncProcess p) {
+        this.p = p;
+        new Thread(this).start();
     }
 
-    class Producer implements Runnable {
-        SyncProcess p;
+    public void run() {
+        // infinite running thread for Producer
+        int i = 0;
+        while (true)
+            p.put(i++);
+    }
+}
 
-        Producer(SyncProcess p) {
-            this.p = p;
-            new Thread(this).start();
-        }
+class Consumer implements Runnable {
+    // Thread for consumer process
+    SyncProcess p;
 
-        public void run() {
-            // infinite running thread for Producer
-            int i = 0;
-            while (true)
-                p.put(i++);
-        }
+    Consumer(SyncProcess p) {
+        // Constructor
+        this.p = p;
+        new Thread(this).start();
+    }
 
-        class Consumer implements Runnable {
-            // Thread for consumer process
-            SyncProcess p;
-
-            Consumer(SyncProcess p) {
-                // Constructor
-                this.p = p;
-                new Thread(this).start();
-            }
-
-            public void run() {
-                // infinite running thread for Consumer
-                while (true)
-                    p.get();
-            }
-        }
+    public void run() {
+        // infinite running thread for Consumer
+        while (true)
+            p.get();
     }
 }
