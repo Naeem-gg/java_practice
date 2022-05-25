@@ -2,7 +2,7 @@ import java.util.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-class ASG6Ca
+class city
 extends JFrame implements ActionListener
 {
 JFrame jf;
@@ -12,7 +12,7 @@ JButton b1,b2,b3;
 JTextArea t;
 JPanel p1,p2;
 Hashtable ts;
-ASG6Ca()
+city()
 {
 jf=new JFrame();
 ts=new Hashtable();
@@ -97,6 +97,6 @@ JOptionPane.showMessageDialog(null,"City not found ...");
 }
 public static void main(String a[])
 {
-    ASG6Ca obj=new ASG6Ca();
+    city obj=new city();
 }
 }

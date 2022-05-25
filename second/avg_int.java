@@ -1,7 +1,6 @@
 import java.util.*;
 
-public class avg_int
-        extends Thread {
+public class avg_int extends Thread {
     int ar[];
     int sum = 0;
 
